@@ -1,5 +1,3 @@
-# linux-kurs
+# Primeri koji se koriste u vezbama
 
-Primeri za vezbe
-
-Adresa kursa http://10.10.10.10/linux/
+Lokalna adresa kursa je http://10.10.10.10/linux/
