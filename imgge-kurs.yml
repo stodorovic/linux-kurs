@@ -1,0 +1,19 @@
+name: imgge-kurs
+channels:
+  - bioconda
+  - conda-forge
+  - nanoporetech
+  - defaults
+dependencies:
+  - python=3.10
+  - openjdk=17
+  - bcftools
+  - samtools
+  - pandas
+  - scikit-allell
+  - r-base=4.3.1
+  - r-rjson
+  - r-optparse
+  - r-tidyverse
+  - r-foreach
+  - r-doparallel
