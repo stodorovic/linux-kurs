@@ -10,7 +10,7 @@ dependencies:
   - bcftools
   - samtools
   - pandas
-  - scikit-allell
+  - scikit-allel
   - r-base=4.3.1
   - r-rjson
   - r-optparse
