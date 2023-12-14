@@ -4,8 +4,10 @@ Linkovi za R:
 * MacOS base - https://cran.r-project.org/bin/macosx/
 * RStudio https://posit.co/download/rstudio-desktop/
 
-Instalacija conda okruzenja:
-`conda env create -f imgge-rnaseq.yaml`
+Instalacija conda okruzenja (pokrenuti Terminal, skinuti yaml fajl u HOME direktorijum i onda pokrenuti conda komandu za instalaciju okruženja):
+```
+conda env create -f imgge-rnaseq.yaml
+```
 
 Ukoliko imate staru instalaciju conde, mozda je potreban update pre instalacije novog okruzenja - `conda update conda`
 
