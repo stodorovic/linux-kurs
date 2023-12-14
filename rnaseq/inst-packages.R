@@ -1,0 +1,15 @@
+#install required packages and load them
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+BiocManager::install("DESeq2")
+BiocManager::install("clusterProfiler")
+BiocManager::install("ggplot2")
+BiocManager::install("magrittr")
+BiocManager::install("stringr")
+BiocManager::install("data.table")
+BiocManager::install("ggsci")
+BiocManager::install("org.Hs.eg.db")
+BiocManager::install("AnnotationDbi")
+BiocManager::install("pheatmap")
+BiocManager::install("RColorBrewer")
