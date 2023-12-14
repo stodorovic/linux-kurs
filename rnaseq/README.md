@@ -6,3 +6,5 @@ Linkovi za R:
 
 Instalacija conda okruzenja:
 `conda env create -f imgge-rnaseq.yaml`
+
+Ukoliko imate staru instalaciju conde, moyda je potreban update pre instalacije novog okruzenja - `conda update conda`
