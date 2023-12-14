@@ -8,3 +8,5 @@ Instalacija conda okruzenja:
 `conda env create -f imgge-rnaseq.yaml`
 
 Ukoliko imate staru instalaciju conde, moyda je potreban update pre instalacije novog okruzenja - `conda update conda`
+
+Instalacija miniconde za MacOS - `brew install --cask miniconda`
