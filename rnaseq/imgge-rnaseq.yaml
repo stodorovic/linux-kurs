@@ -12,3 +12,4 @@ dependencies:
   - samtools
   - star
   - subread
+  - trimmomatic
