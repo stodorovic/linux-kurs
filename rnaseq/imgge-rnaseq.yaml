@@ -1,0 +1,14 @@
+name: imgge-rnaseq
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - fastp
+  - fastqc
+  - multiqc
+  - rsem
+  - sambamba
+  - samtools
+  - star
+  - subread
