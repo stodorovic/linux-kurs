@@ -10,3 +10,5 @@ Instalacija conda okruzenja:
 Ukoliko imate staru instalaciju conde, moyda je potreban update pre instalacije novog okruzenja - `conda update conda`
 
 Instalacija miniconde za MacOS - `brew install --cask miniconda`
+
+IGV - https://igv.org/doc/desktop/#DownloadPage/
