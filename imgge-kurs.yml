@@ -9,10 +9,17 @@ dependencies:
   - samtools
   - bcftools
   - fastp
+  - trimmomatic
   - fastqc
   - bwa
+  - bowtie2
+  - minimap2
+  - STAR
   - freebayes
   - vcflib=1.0.3
   - tabixpp=1.1.0
   - gatk=3.8
   - pandas
+  - qualimap
+  - multiqc
+  - subread
