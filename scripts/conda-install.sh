@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -x $CONDA_EXE ]; then
+if [ -x "$CONDA_EXE" ]; then
         source `dirname $CONDA_EXE`/../etc/profile.d/conda.sh
 elif [ -x /opt/conda/bin/conda ]; then
         source /opt/conda/etc/profile.d/conda.sh
@@ -8,7 +8,7 @@ elif [ -x $HOME/miniconda3/bin/conda ]; then
         source $HOME/miniconda3/etc/profile.d/conda.sh
 fi
 
-if [ ! -x $CONDA_EXE ]; then
+if [ ! -x "$CONDA_EXE" ]; then
         echo -e "\nInstalling miniconda\n"
 
         mkdir -p ~/miniconda3
