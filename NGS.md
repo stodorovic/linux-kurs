@@ -1,3 +1,16 @@
+## wget - referentni
+```console
+wget http://10.10.10.10/linux/vezbe/af.tar.gz
+```
+
+```console
+fastq-dump --gzip --split-files SRR11648416
+```
+
+```console
+fasterq-dump SRR11648416
+```
+
 ## Trimovanje
 ```console
 fastp --average_qual 28 -w 2 -i fastq/V300114179_L04_80_80_1.fq.gz -I fastq/V300114179_L04_80_80_2.fq.gz \
