@@ -34,3 +34,20 @@ bcftools filter -i'QUAL>20 && INFO/DP>10' vcf/uzorak1_raw.vcf.gz > vcf/uzorak1_f
 ```console
 bcftools consensus -f reference/sequence.fasta vcf/uzorak1_filter.vcf.gz > fasta/uzorak1.fasta
 ```
+
+```console
+bwa index reference/af.fasta
+
+bwa mem -t 4 reference/af.fasta fastq/SRR11648416_?.fastq | samtools sort > bam/SRR11648416.bam
+samtools index bam/SRR11648416.bam
+
+samtools stats bam/SRR11648416.bam > reports/SRR11648416_stats.txt
+samtools depth bam/SRR11648416.bam > reports/SRR11648416_depth.txt
+samtools idxstats bam/SRR11648416.bam > reports/SRR11648416_total_stats.txt
+
+qualimap bamqc -bam bam/SRR11648416.bam -outdir reports/SRR11648416_qualimap
+
+featureCounts -p -C -B -M -t exon -g gene_id -a reference/af.gff3 -o reports/SRR11648416_FC_counts.txt bam/SRR11648416.bam
+featureCounts -T 5  --ignoreDup -p -C -B -M -t 'gene' --extraAttributes 'biotype' -a reference/af.gff3 -o reports/SRR11648416_FC_biotip_counts.txt bam/SRR11648416.bam
+featureCounts -T 5  --ignoreDup -p -C -B -M -t 'ncRNA_gene' --extraAttributes 'biotype' -a reference/af.gff3 -o reports/SRR11648416_FC_biotip_counts.txt bam/SRR11648416.bam
+````
