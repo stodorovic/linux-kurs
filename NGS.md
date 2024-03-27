@@ -1,8 +1,42 @@
 ## wget - referentni
 ```console
 wget http://10.10.10.10/linux/vezbe/af.tar.gz
+tar zxvf af.tar.gz
 ```
 
+## Indeksiranje
+```console
+bwa index reference/af.fasta
+```
+
+## Mapiranje
+```console
+bwa mem -t 4 reference/af.fasta fastq/SRR11648416_*.fastq | samtools sort > bam/SRR11648416.bam 
+```
+
+## Indeksiranje BAM fajla
+```console
+samtools index bam/SRR11648416.bam
+```
+
+## Analiza kvaliteta mapiranja
+```console
+samtools stats bam/SRR11648416.bam > reports/SRR11648416_stats.txt
+samtools depth bam/SRR11648416.bam > reports/SRR11648416_depth.txt
+samtools idxstats bam/SRR11648416.bam > reports/SRR11648416_total_stats.txt
+```
+```console
+qualimap bamqc -bam bam/SRR11648416.bam –outdir reports/SRR11648416_qualimap
+```
+
+## featureCounts
+```console
+featureCounts -p -C -B -M -t exon -g gene_id -a reference/af.gtf -o reports/SRR11648416_FC_counts.txt bam/SRR11648416.bam 
+featureCounts -T 5 --ignoreDup -p -C -B -M -t 'gene' --extraAttributes 'biotype' -a reference/af.gff3 -o reports/SRR11648416_FC_biotip_counts.txt bam/SRR11648416.bam 
+featureCounts -T 5 --ignoreDup -p -C -B -M -t 'ncRNA_gene' --extraAttributes 'biotype' -a reference/af.gff3 -o reports/SRR11648416_FC_biotip_counts.txt bam/SRR11648416.bam
+```
+
+## Skidanje
 ```console
 fastq-dump --gzip --split-files SRR11648416
 ```
