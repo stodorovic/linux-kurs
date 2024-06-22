@@ -5,7 +5,7 @@ channels:
   - defaults
 dependencies:
   - python=3.10
-  - openjdk=8
+  - openjdk=17
   - samtools
   - bcftools
   - fastp
@@ -18,8 +18,9 @@ dependencies:
   - freebayes
   - vcflib=1.0.3
   - tabixpp=1.1.0
-  - gatk=3.8
+  - gatk4
   - pandas
   - qualimap
   - multiqc
   - subread
+  - sambamba
