@@ -20,13 +20,20 @@ if [ ! -x "$CONDA_EXE" ]; then
         conda init bash
 fi
 
+if ! grep -q channels: ~/.condarc 2> /dev/null; then
+	conda config --add channels defaults
+fi
+
 echo -e "\nActivate base environment\n"
 conda activate base
 
 conda update -n base conda --all -y
 
-echo -e "\nInstalling imgge-kurs environment\n"
-conda env update --name imgge-kurs --file $HOME/Kurs/imgge-kurs.yml --prune
+KURS_DIR=$(dirname $(dirname $0 ) )
+if [ -f "$KURS_DIR/imgge-kurs.yml" ]; then
+	echo -e "\nInstalling imgge-kurs environment\n"
+	conda env update --name=imgge-kurs --file="$KURS_DIR/imgge-kurs.yml" --prune
+fi
 
 conda clean --all -y
 pip3 cache purge
