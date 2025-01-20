@@ -1,12 +1,16 @@
 name: imgge-kurs
 channels:
-  - bioconda
   - conda-forge
-  - defaults
+  - bioconda
+  - nodefaults ## ignore user settings
 dependencies:
-  - python=3.10
+  - python=3.12
+  - pip
   - openjdk=17
+
+  ## Bioinfo
   - samtools
+  - htslib
   - bcftools
   - fastp
   - trimmomatic
@@ -19,8 +23,76 @@ dependencies:
   - vcflib=1.0.3
   - tabixpp=1.1.0
   - gatk4
-  - pandas
   - qualimap
   - multiqc
   - subread
   - sambamba
+
+  ## common
+  - ncurses
+  - openssl
+
+  ## python
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  - python-json-logger
+  - python-dateutil
+  - pyopenssl
+  - python-fastjsonschema
+  - pyyaml
+  - pyzmq
+
+  ## jupyter
+  - jupyter
+  - jupyter-lsp
+  - jupyter_console
+  - jupyter_core
+  - jupyter_client
+  - jupyter_events
+  - jupyter_server
+  - jupyter_server_terminals
+  - jupyterlab
+  - jupyterlab_pygments
+  - jupyterlab_server
+  - jupyterlab_widgets
+  - ipykernel
+  - ipython
+  - notebook
+  - notebook-shim
+
+  - anyio
+  - attrs
+  - babel
+  - certifi
+  - idna
+  - ipywidgets
+  - jinja2
+  - json5
+  - jsonschema
+  - jsonschema-specifications
+  - libsodium
+  - markupsafe
+  - matplotlib-inline
+  - nbclient
+  - nbconvert-core
+  - nbformat
+  - overrides
+  - packaging
+  - platformdirs
+  - prometheus_client
+  - pygments
+  - referencing
+  - requests
+  - rpds-py
+  - send2trash
+  - six
+  - sniffio
+  - tornado
+  - traitlets
+  - typing_extensions
+  - urllib3
+  - websocket-client
+  - yaml
+  - zeromq

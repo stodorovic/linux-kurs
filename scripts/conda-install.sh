@@ -12,7 +12,7 @@ if [ ! -x "$CONDA_EXE" ]; then
         echo -e "\nInstalling miniconda\n"
 
         mkdir -p ~/miniconda3
-        wget https://repo.anaconda.com/miniconda/Miniconda3-py311_24.1.2-0-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+        wget https://repo.anaconda.com/miniconda/Miniconda3-py312_24.9.2-0-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
         bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
         rm -rf ~/miniconda3/miniconda.sh
 
@@ -21,7 +21,9 @@ if [ ! -x "$CONDA_EXE" ]; then
 fi
 
 if ! grep -q channels: ~/.condarc 2> /dev/null; then
-	conda config --add channels defaults
+	conda config --add channels bioconda
+	conda config --add channels conda-forge
+	conda config --set channel_priority strict
 fi
 
 echo -e "\nActivate base environment\n"
